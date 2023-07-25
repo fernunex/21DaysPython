@@ -3,11 +3,7 @@
 
 def find_largest_palindrome(words):
     palindromos = [word for word in words if word.lower()[::-1] == word.lower()]
-    if len(palindromos) > 0:
-        longests = [len(palindromo) for palindromo in palindromos]
-        return palindromos[longests.index(max(longests))]
-    else:
-        return None
+    return max(palindromos, key=len, default=None)
 
 
 
